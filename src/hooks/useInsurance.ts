@@ -1,4 +1,3 @@
-// src/hooks/useInsurance.ts
 import { useContext } from "react";
 import { InsuranceContext } from "../context/InsuranceContext";
 
