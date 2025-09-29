@@ -2,7 +2,7 @@
 import type { ReactNode } from "react";
 
 // Importamos la imagen - asegúrate de tener el archivo en src/assets/
-import logoRimacNavbar from "../assets/Logo-navbar.svg";
+import logoRimacNavbar from "../assets/Logo-Navbar.svg";
 import logoRimacFooter from "../assets/Logo-Footer.svg";
 
 interface LayoutProps {
