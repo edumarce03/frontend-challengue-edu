@@ -1,27 +1,26 @@
+import { Routes, Route, Navigate } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { Home } from "./pages/Home";
+import { Planes } from "./pages/Planes";
+import { Resumen } from "./pages/Resumen";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          ¡Tailwind CSS v4 está funcionando!
-        </h1>
-        <p className="text-lg text-gray-600 mb-6">
-          Mi proyecto React con TypeScript y Tailwind CSS: Prueba Técnica
-        </p>
-        <div className="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto">
-          <ul className="text-left text-gray-700 space-y-2">
-            <li className="flex items-center">
-              <span className="w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
-              Configurar Tailwind CSS ✓
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
-              Implementar funcionalidades
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <Layout>
+      <Routes>
+        {/* Ruta principal - Landing/Home */}
+        <Route path="/" element={<Home />} />
+
+        {/* Ruta de planes */}
+        <Route path="/planes" element={<Planes />} />
+
+        {/* Ruta de resumen */}
+        <Route path="/resumen" element={<Resumen />} />
+
+        {/* Redirección de rutas no encontradas */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Layout>
   );
 }
 
