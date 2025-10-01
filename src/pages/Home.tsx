@@ -34,11 +34,7 @@ export function Home() {
   };
 
   return (
-    <div className="bg-white min-h-[calc(100vh-7rem)] md:min-h-[calc(100vh-8rem)] relative overflow-hidden">
-      {/* Efectos de luz */}
-      <div className="absolute bottom-0 md:top-0 -left-40 size-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
-      <div className="absolute top-0 -right-40 size-80 bg-cyan-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
-
+    <div className="bg-transparent flex-1 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12 relative z-10">
         {/* Versión Mobile */}
         <div className="block md:hidden space-y-6">
@@ -205,7 +201,7 @@ export function Home() {
                 )}
               </div>
 
-              {/* Checkbox Política de Comunicaciones */}
+              {/* Checkbox Política de Comunicaciones Comerciales */}
               <div>
                 <label className="flex items-start gap-2 cursor-pointer">
                   <input
@@ -220,6 +216,11 @@ export function Home() {
                     Acepto la Política de Comunicaciones Comerciales
                   </span>
                 </label>
+                {errors.acceptCommercial && (
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.acceptCommercial}
+                  </p>
+                )}
               </div>
 
               {/* Enlace */}
@@ -233,7 +234,7 @@ export function Home() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? "Cotizando..." : "Cotiza aquí"}
                 </button>
@@ -401,7 +402,7 @@ export function Home() {
                 )}
               </div>
 
-              {/* Checkbox Política de Comunicaciones */}
+              {/* Checkbox Política de Comunicaciones Comerciales */}
               <div>
                 <label className="flex items-start gap-2 cursor-pointer">
                   <input
@@ -416,6 +417,11 @@ export function Home() {
                     Acepto la Política de Comunicaciones Comerciales
                   </span>
                 </label>
+                {errors.acceptCommercial && (
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.acceptCommercial}
+                  </p>
+                )}
               </div>
 
               {/* Enlace */}
@@ -429,7 +435,7 @@ export function Home() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-black hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? "Cotizando..." : "Cotiza aquí"}
                 </button>

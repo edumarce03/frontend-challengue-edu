@@ -11,8 +11,8 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-14 md:h-16 flex items-center justify-between">
+      <nav className="bg-white  h-14 md:h-16 flex-shrink-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 h-full flex items-center justify-between">
           <div className="flex items-center">
             <img
               src={logoRimacNavbar}
@@ -26,7 +26,6 @@ export function Layout({ children }: LayoutProps) {
               ¡Compra por este medio!
             </span>
             <div className="flex items-center gap-2">
-              {/* Ícono de teléfono SVG */}
               <svg
                 className="w-4 h-4 text-gray-600"
                 fill="none"
@@ -47,21 +46,31 @@ export function Layout({ children }: LayoutProps) {
       </nav>
 
       {/* Contenido principal */}
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 flex items-center justify-center overflow-hidden relative">
+        {/* Efectos de luz CONTAINED */}
+        <div className="absolute bottom-0 right-80 size-50 bg-purple-400 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+        <div className="absolute top-20 left-80 size-50 bg-cyan-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+
+        <div className="w-full relative z-10">{children}</div>
+      </main>
 
       {/* Footer */}
-      <footer className="bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-14 md:h-16 flex items-center justify-between">
-          <div className="flex items-center">
-            <img
-              src={logoRimacFooter}
-              alt="RIMAC Seguros"
-              className="h-5 md:h-6 w-auto opacity-80"
-            />
-          </div>
+      <footer className="bg-black text-white flex-shrink-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0">
+            <div className="flex justify-center md:justify-start">
+              <img
+                src={logoRimacFooter}
+                alt="RIMAC Seguros"
+                className="h-5 md:h-7 w-auto opacity-80"
+              />
+            </div>
 
-          <div className="text-xs md:text-sm text-gray-400">
-            © 2025 RIMAC Seguros y Reaseguros.
+            <div className="md:hidden h-px bg-gray-600 my-1" />
+
+            <p className="text-xs text-white text-center md:text-right">
+              © 2025 RIMAC Seguros y Reaseguros.
+            </p>
           </div>
         </div>
       </footer>

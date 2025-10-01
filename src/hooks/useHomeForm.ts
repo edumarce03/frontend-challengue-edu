@@ -73,6 +73,11 @@ export function useHomeForm() {
       newErrors.acceptPrivacy = "Debes aceptar la Política de Privacidad";
     }
 
+    if (!formData.acceptCommercial) {
+      newErrors.acceptCommercial =
+        "Debes aceptar las Comunicaciones Comerciales";
+    }
+
     // Checkbox de comunicaciones comerciales es opcional, no validamos
 
     setErrors(newErrors);

@@ -111,10 +111,12 @@ export function Planes() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            {user ? `¡Hola ${user.name}!` : "¡Hola!"}
+            {user
+              ? `¡Hola ${user.name}! ¿Para quién deseas cotizar?`
+              : "¡Hola!"}
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Elige tu protección
+            Selecciona la opción que se ajuste más a tus necesidades.
           </p>
         </div>
 
